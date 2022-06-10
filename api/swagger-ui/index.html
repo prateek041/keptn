@@ -76,8 +76,8 @@
       window.ui = ui
 
       // add oauth checks
-      const oauth_prefix = "keptn:";
-      const oauth_enabled = true;
+      const oauth_prefix = "";
+      const oauth_enabled = false;
 
       document.getElementById("swagger-ui").addEventListener('DOMSubtreeModified', function(event) {
         if(event.target.className == "oauth-scopes"){
