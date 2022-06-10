@@ -52,7 +52,7 @@
         ],
         layout: "StandaloneLayout",
         urls: [{
-          url: prefixPath + "./swagger.yaml",
+          url: prefixPath + "/api/swagger-ui/swagger.yaml",
           name: "api-service"
         }, {
           url: prefixPath + "/api/configuration-service/swagger-ui/swagger.yaml",
@@ -76,7 +76,7 @@
       window.ui = ui
 
       // add oauth checks
-      const oauth_prefix = "keptn:2:";
+      const oauth_prefix = "keptn:";
       const oauth_enabled = true;
 
       document.getElementById("swagger-ui").addEventListener('DOMSubtreeModified', function(event) {

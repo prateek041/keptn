@@ -27,7 +27,7 @@ paths:
       description: >
         <span class="oauth-scopes">Required OAuth scopes: ${prefix}project:read</span>
       responses:
-        300:
+        200:
           description: Authenticated
 
   /metadata:
