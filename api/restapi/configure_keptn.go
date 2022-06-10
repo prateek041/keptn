@@ -168,6 +168,7 @@ func setupGlobalMiddleware(handler http.Handler, env *EnvConfig) http.Handler {
 			// OAuth edits
 			fmt.Println("Setting OAuth conf to index.html")
 			editedSwagger := strings.Replace(string(input), "const oauth_prefix = \"\";", "const oauth_prefix = \""+env.OAuthPrefix+"\";", -1)
+			editedSwagger = strings.Replace(editedSwagger, "const oauth_enabled = false;", "const oauth_enabled = true;", -1)
 			err = ioutil.WriteFile("swagger-ui/index.html", []byte(editedSwagger), 0644)
 			if err != nil {
 				fmt.Println("Failed to write OAuth conf to index.html")
