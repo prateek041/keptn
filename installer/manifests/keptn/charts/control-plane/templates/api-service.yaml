@@ -89,6 +89,8 @@ spec:
               value: {{ or (.Values.bridge.oauth).enabled (.Values.features.oauth).enabled | default false }}
             - name: OAUTH_PREFIX
               value: "{{ .Values.features.oauth.prefix }}"
+            - name: HIDE_DEPRECATED
+              value: "{{ .Values.features.swagger.hideDeprecated | default false }}"
           {{- include "control-plane.common.container-security-context" . | nindent 10 }}
       serviceAccountName: keptn-api-service
       {{- include "keptn.nodeSelector" (dict "value" .Values.apiService.nodeSelector "default" .Values.common.nodeSelector "indent" 6 "context" . )}}
